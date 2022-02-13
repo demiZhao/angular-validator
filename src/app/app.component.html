@@ -1,0 +1,20 @@
+<form [formGroup]="validationForm">
+  <div class="form-group">
+    <label>Name</label>
+    <input class="form-control" formControlName="name">
+    <div class="d-block invalid-feedback" *ngIf="name.errors?.name">Please enter valid name</div>
+  </div>
+
+  <div class="form-group">
+    <label>From</label>
+    <input type="number" class="form-control" formControlName="from">
+  </div>
+
+  <div class="form-group">
+    <label>To</label>
+    <input type="number" class="form-control" formControlName="to">
+    <div class="d-block invalid-feedback" *ngIf="validationForm.errors?.range">Please enter valid range</div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
